@@ -1,5 +1,5 @@
 ## Terra
-Node.js constructor of angular projects.
+Node.js constructor of SPA projects.
 
 ## Outline
 
