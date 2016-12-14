@@ -1,0 +1,12 @@
+{
+  "verbose": "true",
+  "watch": [
+    "cluster/",
+    "terra.js",
+    "lib"
+  ],
+  "execMap": {
+    "rb": "ruby",
+    "pde": "processing --sketch={{pwd}} --run"
+  }
+}

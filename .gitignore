@@ -3,6 +3,13 @@ logs
 *.log
 npm-debug.log*
 
+#secure files
+certs
+.env-private
+
+#dev build files
+bower_components
+
 # Runtime data
 pids
 *.pid
