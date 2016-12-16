@@ -1,6 +1,6 @@
 // Util modules
 var fs       = require('fs-extra');
-var tracer   = require('tracer').colorConsole();
+var debug   = require('tracer').colorConsole();
 
 // Web server (express middleware) modules
 var express  = require('express');
@@ -43,16 +43,5 @@ app.get('/config', function (req, res) {
 
 // @TODO add secure end point
 app.listen(process.env.TERRA_PORT, function () {
-  console.log('Example app listening on port', process.env.TERRA_PORT);
+  debug.info('Example app listening on port', process.env.TERRA_PORT);
 });
-
-console.log('\nAvailable Bower Packages\n', bowerPath(), '\n');
-
-for (var k = 0; k < config.bowerItems.length; k++) {
-
-  var bower = config.bowerItems[k];
-
-//  console.log('path to ', bower.name, bowerPath(bower.name), '\n');
-// console.log('path to boothstrap', bowerPath('bootstrap'));
-
-}
