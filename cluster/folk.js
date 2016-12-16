@@ -14,9 +14,6 @@ var favicon = require('serve-favicon');
 var cache = require('../lib/cacheFiles.js');
 var buildConfig = require('../lib/buildConfig.js');
 
-// Function to return the bower path by passing the bower package name
-var bowerPath = require('../../bower-discover');
-
 // Location variables
 var project = __dirname + '/../project';
 var collectionDir = project + '/collections';
