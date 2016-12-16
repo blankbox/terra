@@ -1,0 +1,29 @@
+{
+  "name": "terra",
+  "version": "1.0.0",
+  "description": "Node.js constructor of SPA projects.",
+  "main": "terra.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blankbox/terra.git"
+  },
+  "author": "BlankBox (https://github.com/blankbox)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blankbox/terra/issues"
+  },
+  "homepage": "https://github.com/blankbox/terra#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "chokidar": "^1.6.0",
+    "cors": "^2.8.1",
+    "dotenv-safe": "^3.0.0",
+    "fs-extra": "^0.30.0",
+    "helmet": "^3.1.0",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.2"
+  }
+}
