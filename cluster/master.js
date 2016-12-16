@@ -1,5 +1,5 @@
 var cluster   = require('cluster');
-var tracer    = require('tracer').colorConsole();
+var debug    = require('tracer').colorConsole();
 
 var cpuCount = require('os').cpus().length;
 
@@ -8,12 +8,14 @@ if (process.env.LOCATION == 'local') {
   // If running locally, then use a single cluster so as not to litter the CPU with unneed tasks
   cpuCount = 1;
 
-  tracer.log('Running locally, only', cpuCount, 'CPU used in cluster.');
+  debug.log('Running locally, only', cpuCount, 'CPU used in cluster.');
 
 }
 
-tracer.warn('Cluster Master is running with', cpuCount, 'folks.');
-tracer.warn('env.LOCATION', process.env.LOCATION);
+debug.warn('Cluster Master is running with', cpuCount, 'folks.');
+debug.warn('env.LOCATION', process.env.LOCATION);
+
+debug.info('Master', process.pid);
 
 // Create a worker for each CPU
 for (var i = 0; i < cpuCount; i += 1) {

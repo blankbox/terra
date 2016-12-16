@@ -2,7 +2,7 @@
   "name": "terra",
   "version": "1.0.0",
   "description": "Node.js constructor of SPA projects.",
-  "main": "bower.js",
+  "main": "terra.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/blankbox/terra.git"
   },
-  "author": "Healthera <tech@healthera.co.uk> (https://github.com/Healthera)",
+  "author": "BlankBox (https://github.com/blankbox)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/blankbox/terra/issues"

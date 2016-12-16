@@ -24,3 +24,7 @@ cluster.on('exit', function (worker) {
     cluster.fork();
 
 });
+
+cluster.on('fork', function (worker) {
+    debug.log('Worker: ' + worker.id, 'PID: ', worker.process.pid);
+});
