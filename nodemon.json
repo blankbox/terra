@@ -3,7 +3,8 @@
   "watch": [
     "cluster/",
     "terra.js",
-    "lib"
+    "lib",
+    "project"
   ],
   "execMap": {
     "rb": "ruby",
