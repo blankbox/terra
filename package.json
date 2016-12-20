@@ -17,13 +17,16 @@
   },
   "homepage": "https://github.com/blankbox/terra#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "bower": "^1.7.9",
     "chokidar": "^1.6.0",
     "cors": "^2.8.1",
     "dotenv-safe": "^3.0.0",
+    "express": "^4.14.0",
     "fs-extra": "^0.30.0",
     "helmet": "^3.1.0",
     "morgan": "^1.7.0",
-    "serve-favicon": "^2.3.2"
+    "serve-favicon": "^2.3.2",
+    "tracer": "^0.8.7"
   }
 }
