@@ -18,6 +18,7 @@
   "homepage": "https://github.com/blankbox/terra#readme",
   "dependencies": {
     "bower": "^1.7.9",
+    "bower-discover": "git+https://github.com/blankbox/bower-discover.git",
     "chokidar": "^1.6.0",
     "cors": "^2.8.1",
     "dotenv-safe": "^3.0.0",
