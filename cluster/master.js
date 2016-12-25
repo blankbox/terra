@@ -3,7 +3,7 @@ var debug    = require('tracer').colorConsole();
 
 var cpuCount = require('os').cpus().length;
 
-if (process.env.LOCATION == 'local') {
+if (process.env.LOCATION == 'local' || process.env.NODE_ENV == 'development') {
 
   // If running locally, then use a single cluster so as not to litter the CPU with unneed tasks
   cpuCount = 1;
