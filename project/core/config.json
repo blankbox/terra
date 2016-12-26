@@ -11,6 +11,7 @@
         "footer"
       ],
       "item": {
+        "name": "core",
         "display": "CORE",
         "state": "core",
         "theme": "primary"

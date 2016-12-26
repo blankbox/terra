@@ -38,71 +38,61 @@ app.use(logger('dev'));
 if (process.env.NODE_ENV === 'development') {
 
   app.locals.pretty = true;
-  
+
   app.get('/config', function (req, res) {
     res.json(config);
   });
-  
+
 }
 
-var main_template = cache.load(__dirname + '/../project/core/templates/html/html-wrapper.html');
-
-//console.log('read', fs.readFileSync(__dirname + '/../project/core/templates/html/html-wrapper.html', 'utf8'));
 
 var $ = require('cheerio');
 
-//console.log('main_template', main_template)
+app.use(express.static('dist'));
+
+var cdn = {cdn: config.cdns};
+
 app.get('*', function (req, res) {
-  
-  var page = $.load(main_template);
-  
-  res.type('html');
-  
+
+  var main_template = cache.load(__dirname + '/../project/core/templates/html/html-wrapper.html');
+
   var menu_template = templates.load('menu_item.hbs');
   var main_menu_template = templates.load('main_menu.hbs');
 
-//  console.log('menu_template', menu_template());
-//  console.log('main_menu_template', main_menu_template({path: 'test'}));
+  var page = $.load(main_template);
 
-//  var $menu = $(main_menu_template({path: 'test'}));
-  
+  res.type('html');
+
   page('[data-menu]').each(function() {
-  
+
     var $menuContainer = $(this);
 
-//    var $menu = $(main_menu_template({path: 'test'}));
-    
     var $menu = $('<ul class="main-menu" template-path="{{ path }}"></ul>');
 
     $menuContainer.append($menu);
-    
+
     var menuName = $(this).data('menu');
-    
+
     var menuData = config.menu[menuName];
 
-
     var items = [];
-    
+
     for (var datum in menuData) {
-      items.push($(menu_template(menuData[datum])));
+      items.push($(menu_template(cdn, menuData[datum])));
     }
 
-
     $menu.append(items);
-    
-//    console.log('menu', $(this).data('menu'));
+
   });
-  
-  
+
+
   res.end(page.html());
 
-  
+
 });
 
 
 var port = process.env.TERRA_PORT;
-
-console.log('process.env.LOCATION', process.env.LOCATION);
 
 if (process.env.PORT) {
   port = process.env.PORT;

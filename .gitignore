@@ -10,6 +10,7 @@ certs
 #dev build files
 bower_components
 .c9
+dev
 
 # Runtime data
 pids
